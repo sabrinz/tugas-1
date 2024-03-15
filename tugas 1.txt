@@ -1,0 +1,79 @@
+M SABRI NURZAMAN
+20230040147
+TIF23
+
+1 Buatlah program sederhana
+Menghitung umur berdasarkan tahun lahir
+
+tahun_lahir = int(input("Masukkan tahun lahir: "))
+umur = 2023 - tahun_lahir
+
+print(f"Umur Anda: {umur}")
+
+2 Menghitung uang kembalian beradasarkan total belanja dan uang yang dibayarkan
+
+total_belanja = int(input("Masukkan total belanja: "))
+uang_dibayarkan = int(input("Masukkan uang yang dibayarkan: "))
+
+kembalian = uang_dibayarkan - total_belanja
+
+pecahan = [100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100]
+
+jumlah_pecahan = {}
+for pec in pecahan:
+  jumlah_pecahan[pec] = 0
+
+while kembalian > 0:
+  for pec in pecahan:
+    if kembalian >= pec:
+      jumlah_pecahan[pec] += 1
+      kembalian -= pec
+      break
+
+print("Uang kembalian:")
+for pec, jumlah in jumlah_pecahan.items():
+  if jumlah > 0:
+    print(f" - {pec} x {jumlah}")
+
+3 Menghitung Jumlah yang harus dibayar di indomaret, dengan kondisi jika belanja lebih dari 60 ribu dapat diskon 10 ribu.
+
+total_belanja = int(input("Masukkan total belanja: "))
+
+if total_belanja > 60000:
+  diskon = 10000
+else:
+  diskon = 0
+
+jumlah_yang_harus_dibayar = total_belanja - diskon
+
+print(f"Total Belanja: Rp{total_belanja}")
+print(f"Diskon: Rp{diskon}")
+print(f"Jumlah yang Harus Dibayar: Rp{jumlah_yang_harus_dibayar}")
+
+4 Menghitung gaji (opsional) dengan kriteria:
+gaji_pokok = ?
+uang transport harian = 100.000/hari
+uang makan = 50.000/hari
+uang lembur = 2 jam pertama itu 100.000/jam, jam berikutnya 150.000/jam
+honor = gajipokok+totaltransport+totalmakan+upahlembur
+
+gaji_pokok = int(input("Masukkan gaji pokok: "))
+jumlah_hari_kerja = int(input("Masukkan jumlah hari kerja: "))
+jumlah_jam_lembur = int(input("Masukkan jumlah jam lembur: "))
+
+uang_transport = 100000 * jumlah_hari_kerja
+uang_makan = 50000 * jumlah_hari_kerja
+
+upah_lembur = 0
+if jumlah_jam_lembur <= 2:
+  upah_lembur = jumlah_jam_lembur * 100000
+else:
+  upah_lembur = 2 * 100000 + (jumlah_jam_lembur - 2) * 150000
+
+honor = gaji_pokok + uang_transport + uang_makan + upah_lembur
+
+print(f"Gaji Pokok: Rp{gaji_pokok}")
+print(f"Uang Transport: Rp{uang_transport}")
+print(f"Uang Makan: Rp{uang_makan}")
+print(f"Upah Lembur: Rp{upah_lembur}")
+print(f"Honor: Rp{honor}")
